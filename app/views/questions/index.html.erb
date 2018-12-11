@@ -15,10 +15,22 @@
           <tr>
             <td><%= question.id %></td>
             <td><%= question.title %></td>
-            <td>[Edit] [Dlete]</td>
+            <td>
+              <!-- 質問編集画面へのリンク -->
+              [ <%= link_to 'Edit', edit_question_path(question) %> ]
+              <!-- 質問削除 -->
+              [ <%= link_to 'Delete', question_path(question), method: :delete, data:{ confirm: 'Are you sure?'} %> ]
+            </td>
           </tr>
         <% end %>
       </tbody>
     </table>
+
+    <div>
+      <!-- 質問投稿画面へのリンク -->
+      <!-- ビューメソッド： link_to 'リンクテキスト', 'URL' -->
+      <%= link_to 'New question', new_question_path %>
+    </div>
+
   </div>
 </div>

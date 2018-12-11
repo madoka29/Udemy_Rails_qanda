@@ -12,6 +12,12 @@
 
   <body>
     <div class="container">
+      <% if flash[:notice] #成功メッセージがある場合 %>
+        <p class="text-success"><%= flash[:notice] %></p>
+      <% end %>
+      <% if flash[:alert] #アラートメッセージがある場合 %>
+        <p class="text-danger"><%= flash[:alert] %></p>
+      <% end %>
       <!-- yeildにindex.html.erbなどが入る -->
       <%= yield %>
     </div>

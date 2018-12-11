@@ -1,0 +1,19 @@
+<!-- form_width：フォームを自動で作成してくれる（Rails5.0ではじめて実装） -->
+<!-- local: 非同期通信を使ったフォームを抜こうとしている -->
+<%= form_with model: @question, local: true do |f| %>
+  <div class="form-group">
+    <label>Name</label>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <label>Title</label>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <label>Content</label>
+    <%= f.text_area :content, class: "form-control" %>
+  </div>
+  <div class="text-center">
+    <%= f.submit "Save", class: "btn btn-primary" %>
+  </div>
+<% end %>
