@@ -43,6 +43,12 @@ class QuestionsController < ApplicationController
     redirect_to root_path, notice: 'Delete Success!'
   end
 
+  # 質問詳細ページの作成
+  def show
+    @question = Question.find(params[:id]) # idはURLの形式で取得する
+    @answer = Answer.new # showで回答の投稿ができるようにする
+  end
+
   # Strong paramater: フォームから送ったデータの指定のデータだけを使うようにする（これ以外は無視する）
   private
     def question_params
